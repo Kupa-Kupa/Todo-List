@@ -5,6 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-It</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body></body>
+  <body>
+    <main class="ui-container">
+      <header>
+        <h1>To-Do-It</h1>
+      </header>
+      <section class="side-bar">
+        <nav class="side-bar-nav">
+          <ul>
+            <li><button>Home</button></li>
+            <li><button>Today</button></li>
+            <li><button>Week</button></li>
+            <li><button>Project</button></li>
+            <ul class="project-list">
+              <!-- <li>test</li> -->
+            </ul>
+            <li><button>Notes</button></li>
+          </ul>
+        </nav>
+        <div class="new-note">
+          <button id="add-note">+</button>
+        </div>
+      </section>
+      <section class="notes"></section>
+    </main>
+  </body>
 </html>

@@ -2,7 +2,7 @@
 
 https://www.theodinproject.com/lessons/node-path-javascript-todo-list
 
-[Live View](#) - #
+[Live View](https://kupa-kupa.github.io/Todo-List/) - https://kupa-kupa.github.io/Todo-List/
 
 ## Learnt About:
 

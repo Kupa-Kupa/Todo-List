@@ -18,7 +18,7 @@ body {
 
 .ui-container {
   min-width: 1000px;
-  min-height: 600px;
+  height: 600px;
 
   background-color: whitesmoke;
   border: 3px solid black;
@@ -57,8 +57,34 @@ header {
   list-style: none;
 }
 
+.new-note > form {
+  display: grid;
+}
+
 .notes {
   grid-column: 2 / span 2;
   border: 3px solid red;
   padding: 1rem;
+
+  overflow: auto;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+  border: 2px solid gainsboro;
+  border-radius: 6px;
+}
+
+.todo-item h2 {
+  padding-bottom: 0.5rem;
 }

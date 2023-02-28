@@ -1,77 +1,48 @@
+import { render } from './render.js';
+import { createNewItem } from './todoFactory.js';
+
 // todo items
 const todoItems = [];
 
-// todo item factory function
-function todoItem(
-  title,
-  description,
-  dueDate,
-  priority = 'moderate',
-  project = '',
-  complete = 'no'
-) {
-  return { title, description, dueDate, priority, project, complete };
+createNewItem(todoItems, 'Go Shopping', "I'm hungry.", '2023-09-07', 'urgent');
+createNewItem(todoItems, 'Soccer Training', 'Kick ball.', '2023-02-28');
+
+// todoItems.push(
+//   createNewItem('Go Shopping', "I'm hungry.", '01/01/01', 'urgent')
+// );
+// todoItems.push(createNewItem('Soccer Training', 'Kick ball.', '02/01/01'));
+
+// get todo info from form
+const addNoteForm = document.querySelector('#note-form');
+
+addNoteForm.addEventListener('submit', getTodoInfo);
+
+function getTodoInfo(event) {
+  event.preventDefault();
+
+  const formTitle = document.querySelector('#title');
+  const formDesc = document.querySelector('#description');
+  const formDueDate = document.querySelector('#due-date');
+  const formPriority = document.querySelector('#priority');
+
+  let title = formTitle.value;
+  console.log(title);
+
+  let description = formDesc.value;
+  console.log(description);
+
+  let dueDate = formDueDate.value;
+  console.log(dueDate);
+
+  let priority = formPriority.value;
+  console.log(priority);
+
+  createNewItem(todoItems, title, description, dueDate, priority);
+  console.log(todoItems);
+
+  render(todoItems);
 }
 
-// create new to do
-function createNewItem(
-  title,
-  description,
-  dueDate,
-  priority,
-  project,
-  complete
-) {
-  // call todoItem function
-  const newTodo = todoItem(
-    title,
-    description,
-    dueDate,
-    priority,
-    project,
-    complete
-  );
-  todoItems.push(newTodo);
-}
-
-createNewItem('Title test', 'This is a test todo item', '01/01/01', 'high');
-createNewItem(
-  'Go Shopping',
-  "I'm hungry. Could go for some food.",
-  '01/01/01',
-  'urgent'
-);
-createNewItem('Soccer Training', 'Kick ball.', '02/01/01');
 console.log(todoItems);
-
-// set todo as complete
-
-/*  change todo priority - low (yellow), moderate (orange), high (red),
-    urgent (purple)
-*/
-
-// render todo list on page
-function render(todoItems) {
-  let notesSection = document.querySelector('.notes');
-
-  //   let div = document.createElement('div');
-  //   let h2 = document.createElement('h2');
-  //   let due = document.createElement('p');
-  //   let des = document.createElement('p');
-
-  for (let i = 0; i < todoItems.length; i++) {
-    let div = document.createElement('div');
-    let h2 = document.createElement('h2');
-    let due = document.createElement('p');
-    let des = document.createElement('p');
-
-    h2.innerText = todoItems[i].title;
-    due.innerText = todoItems[i].dueDate;
-    des.innerText = todoItems[i].description;
-
-    div.append(h2, due, des);
-    notesSection.append(div);
-  }
-}
 
 render(todoItems);

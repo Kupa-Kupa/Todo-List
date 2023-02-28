@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-It</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="ui-container">
+      <header>
+        <h1>To-Do-It</h1>
+      </header>
+      <section class="side-bar">
+        <nav class="side-bar-nav">
+          <ul>
+            <li><button>Home</button></li>
+            <li><button>Today</button></li>
+            <li><button>Week</button></li>
+            <li><button>Project</button></li>
+            <ul class="project-list">
+              <!-- <li>test</li> -->
+            </ul>
+            <li><button>Notes</button></li>
+          </ul>
+        </nav>
+        <div class="new-note">
+          <button id="add-note">+</button>
+          <form id="note-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required />
+            <label for="description">Description:</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="5"
+              required
+            ></textarea>
+            <label for="due-date">Due Date:</label>
+            <input type="date" id="due-date" name="due-date" required />
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" required>
+              <option value="low">Low</option>
+              <option value="moderate" selected>Moderate</option>
+              <option value="high">High</option>
+              <option value="urgent">Urgent</option>
+            </select>
+            <div class="form-buttons">
+              <button type="submit" class="add-button">Add Note</button>
+              <button type="button" class="cancel-button">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="notes"></section>
+    </main>
+  </body>
+</html>
